@@ -10,7 +10,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
+      MYSQL_USER: root
       MYSQL_PASSWORD: password
   phpmyadmin:
     depends_on:
@@ -52,7 +52,7 @@ services:
     depends_on:
       - phpfpm
     ports:
-      - "80:80"
+      - "8080:80"
     image: nginx:latest
     volumes:
       - "./wordpress:/var/www/html"
@@ -64,8 +64,8 @@ services:
       - VIRTUAL_HOST=virtualhost.dev
   nginx-proxy:
     image: jwilder/nginx-proxy
-    container_name: nginx-proxy
     ports:
       - "80:80"
     volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
+  

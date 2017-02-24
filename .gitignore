@@ -28,11 +28,20 @@ scss-lint-report.xml
 config.codekit
 
 /wordpress/*
-!/wordpress/.gitkeep
+!/wordpress/wp-content/
+/wordpress/wp-content/index.php
+/wordpress/wp-content/*/index.php
+/wordpress/wp-content/uploads/
+/wordpress/wp-content/plugins/
+/wordpress/wp-content/updraft/
+/wordpress/wp-content/wflogs/
+/wordpress/wp-content/themes/twenty*
 
-/data/*
+/data/db/*
 !/data/.gitkeep
+!/data/db/*.sql
 docker-compose.override.yml
 
 notes.md
 /config/elasticsearch/plugins/*
+wordpress/wp-content/debug.log
