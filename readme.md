@@ -4,7 +4,7 @@ This is a Docker based local development environment for WordPress.
 
 ## What's Inside
 
-This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MariaDB, Elasticsearch, nginx, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
+This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MariaDB, Elasticsearch, nginx, phpmyadmin, dnsmasq, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
 
 You can directly edit PHP, nginx, and Elasticsearch configuration files from within the repo as they are mapped to the correct locations in containers.
 
@@ -16,10 +16,12 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 
 * [Docker](https://www.docker.com/)
 * [docker-compose](https://docs.docker.com/compose/)
+* [dnsmasq via homebrew (running as service)](https://coderwall.com/p/qknu2g/local-docker-development-with-virtual-hosts)
+	-	Replace YOUR_DOCKER_IP with localhost
 
 ## Setup
 
-1. `git clone git@github.com:10up/wp-docker.git <my-project-name>`
+1. `git clone git@github.com:singlemaltcreative/wp-docker.git <my-project-name>`
 1. `cd <my-project-name>`
 1. `docker-compose up`
 1. Run `bash setup.sh` to download WordPress and create a `wp-config.php` file.
@@ -74,4 +76,4 @@ This alias lets you run `dcbash` to SSH into the PHP/WordPress container.
 
 ## Credits
 
-This project is our own flavor of an environment created by John Bloch.
+This project is a fork of https://github.com/10up/wp-docker, and is a flavor of an environment created by John Bloch.
