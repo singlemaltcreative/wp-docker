@@ -17,12 +17,20 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 * [Docker](https://www.docker.com/)
 * [docker-compose](https://docs.docker.com/compose/)
 * [dnsmasq via homebrew (running as service)](https://coderwall.com/p/qknu2g/local-docker-development-with-virtual-hosts)
-	-	Replace YOUR_DOCKER_IP with localhost
+	-	Replace YOUR_DOCKER_IP as found in the above article's instructions with `localhost`
 
-## Setup
+## Clone
 
 1. `git clone git@github.com:singlemaltcreative/wp-docker.git <my-project-name>`
 1. `cd <my-project-name>`
+
+## Configure
+
+1. Replace the `DBNAME` variable at the top of restore.sh, and backup.sh
+1. Replace the `MYSQL_DATABASE` and `VIRTUAL_HOST` key-values from docker-compose.yml with your desired database name and virtual host.
+
+## Setup
+
 1. `docker-compose up`
 1. Run `bash setup.sh` to download WordPress and create a `wp-config.php` file.
 1. Navigate to `http://localhost` in a browser to finish WordPress setup.
@@ -36,9 +44,13 @@ Password: password
 Host: mysql
 ```
 
-Default Elasticsearch connection information (from within PHP-FPM container):
+Default Elasticsearch connection information is available here (from within PHP-FPM container):
 
-```Host: http://elasticsearch:9200```
+```Host: http://[virtualhostnamehere.dev]:9200```
+
+Default phpMyAdmin URL:
+
+```Host: http://[virtualhostnamehere.dev]:8181```
 
 ## Docker Compose Overrides File
 
