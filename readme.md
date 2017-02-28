@@ -26,8 +26,9 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 
 ## Configure
 
-1. Replace the `DBNAME` variable at the top of restore.sh, and backup.sh
-1. Replace the `MYSQL_DATABASE` and `VIRTUAL_HOST` key-values from docker-compose.yml with your desired database name and virtual host.
+1. Replace the `DBNAME` variable at the top of setup.sh, restore.sh, and backup.sh
+1. Replace `servername virtualhost.dev` to your desired virtual host URL in `config/nginx/default.conf`.
+1. Replace the `MYSQL_DATABASE` and `VIRTUAL_HOST` key-values from docker-compose.yml with your desired database name and virtual host (the virtual host should match the name you specifed in `default.conf` from the above step.
 
 ## Setup
 
